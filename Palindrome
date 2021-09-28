@@ -1,0 +1,97 @@
+import java.util.*;
+
+ 
+import java.util.Scanner;
+
+ 
+import java.io.*;
+
+ 
+ 
+
+ 
+public class Palindome {
+
+ 
+ 
+
+ 
+public static void main(String[] args) {
+
+ 
+ 
+
+ 
+for(int i=999*999;i>=100*100;i--){
+
+ 
+if(Palindrome(i)==true){
+
+ 
+System.out.println(i);
+
+ 
+break;
+
+ 
+}
+
+ 
+}
+
+ 
+}
+
+ 
+ 
+
+ 
+static boolean Palindrome(int a){
+
+ 
+int[] bits = new int[7];
+
+ 
+int index=1;
+
+ 
+while(a>0){
+
+ 
+bits[index]=a%10;
+
+ 
+index++;
+
+ 
+a/=10;
+
+ 
+}
+
+ 
+for(int i=1;i<=index/2;i++){
+
+ 
+if(bits[i]!=bits[index-i]){
+
+ 
+return false;
+
+ 
+}
+
+ 
+}
+
+ 
+return true;
+
+ 
+}
+
+ 
+ 
+
+ 
+}
