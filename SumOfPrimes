@@ -1,0 +1,31 @@
+public class SumOfPrimes {
+
+  public static void main(String[]args){
+ 
+   int max=2000000;
+  
+   
+   BigInteger bg=new BigInteger("0");
+   for (int j = 2; j < max; j++) {
+    boolean prime=true;
+   
+    for (int i = 2; i <= (int)Math.sqrt(j); i++) {
+    if(j%i==0 )
+     prime=false;
+    
+    }
+    
+   
+   if(prime){
+   
+    BigInteger add=new BigInteger(Integer.toString(j));
+    bg=bg.add(add);
+    
+   }
+   
+   
+   
+  }
+   System.out.println("ans="+bg); 
+  }
+}}
