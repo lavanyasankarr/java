@@ -1,0 +1,48 @@
+
+import java.util.*;
+
+import java.math.*;
+
+ 
+class SumSquare{
+
+ 
+public static void main(String[] args){
+
+ 
+Scanner in = new Scanner(System.in);
+
+ 
+int t = 1;
+
+ 
+while(t-- > 0){
+ 
+long n = 100;
+
+long Sum = (n * (n + 1)) / 2;
+
+long SumSquares = (n * (n + 1) * ((2 * n) + 1)) / 6;
+ 
+long AbsDiff = Math.abs((Sum * Sum) - SumSquares);
+ 
+System.out.println("The sum of square of first 100 elements is: "+(Sum * Sum));
+
+System.out.println("The square of sum of first 100 elements is: "+SumSquares);
+
+System.out.println("The difference is: "+AbsDiff);
+
+}
+
+ 
+in.close();
+
+ 
+}
+
+ 
+}
+
+
+
+
