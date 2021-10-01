@@ -1,0 +1,53 @@
+import java.lang.*;
+
+import java.io.*;
+
+class SmallestMultiple
+
+{
+
+
+static long gcd (long a, long b)
+
+{
+
+if (a % b != 0)
+
+return gcd (b, a % b);
+
+else
+
+return b;
+
+}
+
+static long lcm (long n)
+
+{
+
+long answer = 1;
+
+for (long i = 1; i <= n; i++)
+
+answer = (answer * i) / (gcd (answer, i));
+
+return answer;
+
+}
+
+
+
+public static void main (String[]args)
+
+{
+
+long n = 20;
+
+
+
+System.out.println ("The Smallest positive number that is evenly divisible by all of the numbers from 1 to 20 is: "+lcm (n));
+
+
+
+}
+
