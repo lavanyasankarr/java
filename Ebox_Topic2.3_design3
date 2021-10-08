@@ -1,0 +1,23 @@
+import java.util.*;
+class Main  {
+	public static void main(String args[]) {
+	int a,b,c;
+	Scanner s=new Scanner(System.in);
+	a=s.nextInt();
+	b=s.nextInt();
+	c=s.nextInt();
+	int max=findmaximum(a,b,c);
+	System.out.println(max+"is the maximum number");
+	}
+	public static int findmaximum(int x,int y,int z){
+	    int r;
+	    if(x>y&&x>z){r=x;}
+	    else if(y>z){r=y;}
+	    else{r=z;}
+	    return r;
+	    
+	    
+	}
+		
+		
+	}
