@@ -1,0 +1,61 @@
+class Address  {
+    String street, city;
+    int pincode;
+    
+    Address () {
+    }
+    
+    Address (String street, String city, int pincode) {
+        this.street = street;
+        this.city = city;
+        this.pincode = pincode;
+    }
+    public String toString(){
+        return street+","+city+"-"+pincode;
+        
+    }
+    
+    //Fill your code here
+}
+class Customer{
+    String name;
+    Address address;
+
+
+
+Customer(String name, Address address){
+    this.name = name;
+    this.address = address;
+}
+//Fill your code here
+public void tostring(){
+    System.out.println(name+" "+address.toString());
+}
+}
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) {
+        //Fill your code here
+        String name,street,city;
+        int pincode;
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the name");
+        name=s.nextLine();
+                System.out.println("Enter the Address Details");
+                System.out.println("Enter the street");
+                street=s.nextLine();
+                        System.out.println("Enter the city");
+                        city=s.nextLine();
+    System.out.println("Enter the pincode");
+            pincode=s.nextInt();
+            Address a=new Address(street,city,pincode);
+                Customer o=new Customer(name,a);
+                            o.tostring();
+
+
+
+
+    }
+}
