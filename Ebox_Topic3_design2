@@ -1,0 +1,58 @@
+//Main.java
+import java.io.*;
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) throws Exception, IOException {
+
+				//Fill your code
+                
+    String a,b,c,d;
+    Scanner sc=new Scanner(System.in);
+    Customer k=new Customer();
+    
+    System.out.println("Enter the name");
+    a=sc.nextLine();
+    System.out.println("Enter the email");
+    b=sc.nextLine();
+    System.out.println("Enter the type");
+    c=sc.nextLine();
+    System.out.println("Enter the location");
+    d=sc.nextLine();
+    
+    Customer j=new Customer(a,b,c,d);
+    j.displayDetails();
+	}
+}
+
+
+//Customer.java
+
+public class Customer{
+	//Fill your code
+    String customerName;
+    String customerEmail;
+    String customerType;
+    String customerAddress;
+    
+    Customer(){
+        System.out.println("Enter the Customer Details");
+    }
+	
+    Customer(String a,String b,String c,String d){
+        customerName=a;
+        customerEmail=b;
+        customerType=c;
+        customerAddress=d;
+    }
+	public void displayDetails(){
+
+			//Fill your code
+            
+
+System.out.println("Name: "+customerName);
+System.out.println("E-mail: "+customerEmail);
+System.out.println("Type: "+customerType);
+System.out.println("Location: "+ customerAddress);
+	}
+	
+}
