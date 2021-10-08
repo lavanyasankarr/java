@@ -1,0 +1,37 @@
+import java.util.Scanner;
+class Main{
+    public static void main(String[] args){
+        String add1,add2;
+        Scanner s=new Scanner(System.in);
+        System.out.println("Address 1:");
+        add1=s.nextLine();
+        System.out.println("Address 2:");
+        add2=s.nextLine();
+        int count=0,count1=0;
+        for(int i=0;i<add1.length();i++){
+            if(add1.charAt(i)==' '){
+                count++;
+            }
+            
+        }
+         for(int i=0;i<add2.length();i++){
+            if(add2.charAt(i)==' '){
+                count1++;
+            }
+            
+        }
+        
+        String s1=add1.replaceAll("\\s","");
+         String s2=add2.replaceAll("\\s","");
+         
+         if(add1.equals(add2)==true){
+             System.out.println("RED");}
+             else if(add1.equalsIgnoreCase(add2)==true && add1.equals(add2)==false){
+             System.out.println("BLUE");}
+             else if(s1.equals(s2)==true && count!=count1){
+                 System.out.println("YELLOW");}
+                 else if(add1.equals(add2)==false){
+                     System.out.println("GREEN");
+                 }
+             }
+         }
