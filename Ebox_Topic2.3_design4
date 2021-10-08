@@ -1,0 +1,18 @@
+import java.util.*;
+class Main  {
+	public static void main(String args[]) {
+		int b;
+		int fact=1;
+		Scanner s=new Scanner(System.in);
+		b=s.nextInt();
+		fact=factorial(b);
+		System.out.println(fact);
+	}
+	public static int factorial(int n){
+	    if(n==0){return 1;}
+	    else {return(n*factorial(n-1));}
+	
+		
+		
+	}
+}
