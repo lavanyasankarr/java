@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Main {
+	public static void main(String args[]) throws Exception{
+		//write your code here
+        int i;
+    ArrayList<String>  halls=new ArrayList<>();
+    System.out.println("Enter the number of halls:");
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    for(i=1;i<=n;i++){
+     System.out.println("Enter the Hall Name"+i);
+            String a=sc.next();
+             halls.add(a);
+    }
+        System.out.println("Enter the hall name to be searched:");
+        String s=sc.next();
+        boolean b=halls.contains(s);
+        int pos=halls.indexOf(s);
+        if(b){
+            System.out.println(s+""+"hall is found in the list at position"+pos);
+        }
+        else{
+            System.out.println(s+""+ "hall is not found");
+        }
+        
+        
+        
+        
+        
+	}
+}
