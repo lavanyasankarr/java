@@ -1,0 +1,23 @@
+
+import java.util.*;
+import java.io.*;
+class Main{
+    public static void main(String[] args){
+        int n,cn1=0,cn2=0;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number of items:");
+        n=sc.nextInt();
+        System.out.println("Enter Item details (Supplier Name followed by Item Code followed by Item Type Key)");      for(int i=0;i<n;i++){
+            String data=sc.next();
+            int len=data.length();
+            if(data.substring(len-3).endsWith("FUR"))
+            {cn1++;}
+            else if(data.substring(len-2).endsWith("EL")){
+                cn2++;
+            }
+        }
+        System.out.println("Furniture items count= "+cn1);
+        System.out.println("Electronics item count= "+cn2);
+        
+    }
+}
