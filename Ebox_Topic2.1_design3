@@ -1,34 +1,28 @@
-import java.io.*;
 import java.util.Scanner;
+import java.util.*;
 public class Main{
-    public static void main(String[] args)
-    {
-        int n,i=0,flag=0,x;
+    public static void main(String args[]){
+        int rows;
+        int columns;
         Scanner sc=new Scanner(System.in);
-         n=sc.nextInt();
-    
-        int a[]=new int[n];
-        for( i=0;i<n;i++){
-            a[i]=sc.nextInt();
-    
-            
+        rows=sc.nextInt();
+        columns=sc.nextInt();
+        int matrix[][]=new int[rows][columns];
+        for(int i=0;i<rows;i++){
+            for(int j=0;j<columns;j++){
+                matrix[i][j]=sc.nextInt();
+            }
         }
-x=sc.nextInt();
-for(i=0;i<n;i++){
-    if(a[i]==x){
-        flag=1;
-        break;
+      
+        int minNum=Integer.MAX_VALUE;
+        for(int i=0;i<rows;i++)
+        {
+            for(int j=0;j<columns;j++){
+                if( matrix[i][j]<=minNum)
+                    minNum=matrix[i][j];
+                
+            }}
         
-    }
-    else
-    {
-        flag=0;
+      System.out.println("The minimum element is"+minNum);
     }
 }
-if(flag==1){System.out.println(x+"is present in the array");}
-else{System.out.println(x+"is not present in the array");}
-    
-    
-}
-        
-    }
