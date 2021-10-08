@@ -1,0 +1,58 @@
+//Item_Type.java
+
+import java.text.*;
+
+public class ItemType {
+	
+		//Fill your code		
+	String name;
+    Double costPerDay;
+    double deposit;
+    
+    public void setName(String d){name=d;}
+    public void setCostPerDay (double f){costPerDay=f;}
+     public void setDeposit (double e){deposit=e;}
+     
+     public String getName(){return name;}
+     public Double getCostPerDay(){return costPerDay;}
+     public Double getDeposit(){return deposit;}
+       
+     
+     
+	public void display(){
+
+		//Fill your code
+        
+        DecimalFormat df=new DecimalFormat(".00");
+        System.out.println("Item type details");
+        System.out.println("Name:"+name);
+        System.out.println("CostPerDay:"+df.format(costPerDay));
+        System.out.println("Deposit:"+df.format(deposit));
+        
+	}
+}
+
+//Main.java
+import java.io.*;
+
+class Main{
+	public static void main(String[] args) throws Exception{ 
+
+		//Fill your code
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+         System.out.println("Enter the item type name");
+         String name=br.readLine();
+         System.out.println("Enter the cost per day");
+         double costPerDay=Double.parseDouble(br.readLine());
+         System.out.println("Enter the deposit");
+         double deposit=Double.parseDouble(br.readLine());
+         ItemType p=new ItemType();
+         
+         p.setName(name);
+         p.setCostPerDay(costPerDay);
+         p.setDeposit(deposit);
+         p.display();
+	}
+}
+
+	
