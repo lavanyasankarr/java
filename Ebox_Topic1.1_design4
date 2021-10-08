@@ -1,0 +1,31 @@
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        double brand,travel,food,log;  
+        Scanner i=new Scanner(System.in);
+        System.out.println("Enter branding expenses");
+        brand=i.nextDouble();
+        System.out.println("Enter travel expenses");
+        travel=i.nextDouble();
+        System.out.println("Enter food expenses");
+        food=i.nextDouble();
+        System.out.println("Enter logistics expenses");
+        log=i.nextDouble();
+        
+        double Total_expenses=brand+travel+food+log;
+        System.out.println("Total expenses:Rs."+String.format("%.2f",Total_expenses));
+        
+        double bp=(brand/Total_expenses)*100;
+        double tp=(travel/Total_expenses)*100;
+        double fp=(food/Total_expenses)*100;
+        double lp=(log/Total_expenses)*100;
+        
+        System.out.println("Branding expenses percentage:" +String.format("%.2f%%",bp));
+        System.out.println(" Travel expenses percentage:" +String.format("%.2f%%",tp));
+        System.out.println(" Food expenses percentage:" +String.format("%.2f%%",fp));
+        System.out.println("Logistics expenses percentage:" +String.format("%.2f%%",lp));
+        
+    }
+    
+    
+}
