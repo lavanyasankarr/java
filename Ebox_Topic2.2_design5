@@ -1,0 +1,19 @@
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        char ch='"';
+        System.out.println("Enter the string");
+        Scanner sc=new Scanner(System.in);
+       String n=sc.nextLine();
+        System.out.println("Enter the start string");
+       String w=sc.nextLine();
+        if(n.startsWith(w)){
+            System.out.println(ch+n+ch+"starts with"+ch+w+ch);
+            
+        }
+        else
+        System.out.println(ch+n+ch+"does not start with"+ch+w+ch);
+        
+        
+    }
+}
