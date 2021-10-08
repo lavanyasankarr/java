@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class Main{
+    public static void main(String[] args){
+        int a,b,c,d;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter total number of overs:");
+        a=sc.nextInt();
+        System.out.println("Enter  Target Runs:");
+        b=sc.nextInt();
+        System.out.println("Enter overs bowled:");
+        c=sc.nextInt();
+        System.out.println("Enter Runs scored:");
+        d=sc.nextInt();
+        float e=(float)c;
+        float f=(float)d;
+        float runrate=f/e;
+        System.out.println("Current Run Rate:" +String.format("%.2f",runrate));
+        float balls_remain=a-c;
+        float run_to_win=b-d;
+        float Required_run_rate=(run_to_win)/(balls_remain);
+        System.out.println("Run Rate required after" +c+"overs:" +String.format("%.2f",Required_run_rate));
+        
+    }
