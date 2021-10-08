@@ -1,0 +1,38 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class ReciprocalCycles {
+	
+	public String run() {
+		int bestNumber = 0;
+		int bestLength = 0;
+		for (int i = 1; i <= 1000; i++) {
+			int len = getCycleLength(i);
+			if (len > bestLength) {
+				bestNumber = i;
+				bestLength = len;
+			}
+		}
+		return Integer.toString(bestNumber);
+	}
+	
+	
+	private static int getCycleLength(int n) {
+		Map stateToIter = new HashMap<>();
+		int state = 1;
+		for (int iter = 0; ; iter++) {
+			if (stateToIter.containsKey(state))
+				return iter - stateToIter.get(state);
+			else {
+				stateToIter.put(state, iter);
+				state = state * 10 % n;
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+                ReciprocalCycles solution = new ReciprocalCycles();
+		System.out.println(solution.run());
+	}	
+}
+
