@@ -1,0 +1,113 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+import java.text.*;
+
+class Address{
+ private String street,city;
+ private int pincode;
+    public Address(){}
+
+   public Address(String street, String city, int pincode)    
+   {
+       this.street=street;
+       this.city=city;
+       this.pincode=pincode;
+   }
+  public boolean  equals(Object obj)    
+    {
+        
+        if(this==obj)
+        return true;
+        if(obj==null)
+        return false;
+        if(getClass()!=obj.getClass())
+        return false;
+        Address other=(Address)obj;
+        return Objects.equals(city,other.city)&&pincode==other.pincode&&Objects.equals(street,other.street);
+        
+         
+}
+
+
+
+public String toString(){
+    return "Address:"+street+","+city+"-"+pincode;
+}
+}
+
+class Customer{
+    
+    private String name;
+   private Address address;
+   
+   static private int i=0;
+   
+   public Customer(){}
+   
+    public Customer(String name, Address address){
+    this.name=name;
+    this.address=address;
+    }    
+    public boolean equals(Object obj)    
+    
+    {
+        if(this==obj) 
+        return true;
+        if(obj==null)
+        return false;
+        if(getClass()!=obj.getClass())
+        return false;
+        Customer other=(Customer)obj;
+        return Objects.equals(address,other.address)&&Objects.equals(name,other.name);
+}
+
+
+public String toString(){
+    return ++i+")"+ "Name:"+name+"\n"+address;  
+}
+
+}
+
+public class Main {
+    static BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
+    public static void main(String []args) throws IOException
+	{
+		String name = null,street = null,city = null;
+		int pincode = 0,i=0,n;
+		boolean result = false ;
+		Customer []data = new Customer[100];
+        System.out.println("Enter number of customers");
+        n = Integer.parseInt(br.readLine());
+		for(i=0;i<n;i++){
+			System.out.println("Enter the Customer Details "+(i+1));
+			System.out.println("Enter the name");
+			name = br.readLine();
+			System.out.println("Enter the Address Details");
+			System.out.println("Enter the street");
+			street = br.readLine();
+			System.out.println("Enter the city");
+			city = br.readLine();
+			System.out.println("Enter the pincode");
+			pincode = Integer.parseInt(br.readLine());
+			data[i] = new Customer(name,new Address(street,city,pincode));
+		}
+		for(int j=0;j<n;j++){
+			for(int k=0;k<n && k!=j;k++){
+				result |= data[j].equals(data[k]);
+				if(result){
+                    k=i+1;j=i+1;
+					break;
+				}
+			}
+		}
+		if(result){
+	System.out.println("The identical Customer Details are");
+    System.out.println(data[i-1]);
+	
+		}
+        else{
+		System.out.println("\nNo duplicate details");}
+	}
+}
